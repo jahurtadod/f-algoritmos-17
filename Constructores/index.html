@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js - Constructor</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h2>Cronstructores</h1>
+					<h5>PROGRAMACIÓN DE ALGORITMOS [A]</h5>
+					<p>
+						<small>Created by Jorge Hurtado</a> / <a href="https://github.com/jahurtadod">jahurtadod</a></small>
+					</p>
+				</section>
+
+				<section>
+					<section>
+					<p>
+						Un constructor tiene la responsabilidad de poner cada objeto de esa clase en un estado adecuado para que pueda ser usado una vez que haya sido creado. 
+					</p>
+					<ul>
+						<li>Esta operación se denomina inicialización.</li>
+					</ul>
+					<br>
+
+					</section>
+
+				</section>
+
+				<section>
+					<p>
+						Uno de los rasgos distintivos de los constructores es que tienen el mismo nombre que la clase en la que son definidos.
+					</p>
+						<pre><code class="Java" data-trim contenteditable>
+public class MaquinaDeBoletos { 
+    Se omitieron los campos 
+    /** 
+    * El Código muestra el constructor de la clase MaquinaDeBoletos.
+    */ 
+    public MaquinaDeBoletos (int precioDelBoleto) { 
+        precio = precioDelBoleto; 
+        saldo = 0; 
+        total = 0; 
+    } 
+    Se omitieron los métodos 
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<section>
+					<h2></h2>
+					<p>
+						En Java se requiere llamar al constructor para cada objeto creado. Donde al momento de escribir new se esta llamando al constructor de la clase para realizar la inicialización. 
+					</p>
+					<p>
+						La sintaxis para llamarlo es:
+					</p>
+						<pre><code class="Java" data-trim contenteditable>
+TipoClase variable = new TipoClase(argumentos);
+/** 
+* Ejemplo :
+*/ 
+Asignatura asignatura1 = new Asignatura(int creditos); 
+
+
+					</code></pre>
+
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#263238">
+					<section>
+					<p>
+
+						Al igual que los métodos, los constructores también pueden recibir parámetros como se observa en el ejemplo el constructor recibe un valor entero precioDelBoleto.
+					</p>
+					<pre><code class="Java" data-trim contenteditable>
+    public MaquinaDeBoletos (int precioDelBoleto) { }
+					</code></pre>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#263238">
+					<section>
+					<h2></h2>
+					<p>
+						No obstante, una importante diferencia entre los constructores y los métodos es que los constructores no pueden devolver valores, por lo cual no pueden especiﬁcar un tipo de valor de retorno (ni siquiera void).
+					</p>
+					</section>
+					<section>
+						<h4>Diferencias métodos - constructores</h2>
+					<pre><code class="Java" data-trim contenteditable>
+public class LibroCalificaciones
+{ 
+	// nombre del curso para este LibroCaliﬁcaciones
+	private String nombreDelCurso; 
+	
+
+	// el constructor inicializa nombreDelCurso con el objeto String que se provee como argumento
+	public LibroCaliﬁcaciones( String nombre ) 
+	{ 
+		// inicializa nombreDelCurso
+		nombreDelCurso = nombre; 
+	} // ﬁn del constructor
+
+	// método para establecer el nombre del curso
+	public void establecerNombreDelCurso( String nombre )
+	{ 
+		// almacena el nombre del curso
+		nombreDelCurso = nombre; 
+	} // ﬁn del método establecerNombreDelCurso
+}
+					</code></pre>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#263238">
+					<section>
+					<p>
+						Cabe mencionar que el compilador de Java de manera predeterminada, proporciona un constructor predeterminado el mismo que carece de parámetros, en cualquier clase que no incluya un constructor en forma explícita.
+					</p>
+				</section>
+				</section>
+
+				<section style="text-align: left;">
+					<h3>BIBLIOGRAFÍA</h1>
+					<p>
+						- <a>Barnes, D. J., & Kölling, M. (2007). Programación orientada a objetos con Java. MANEJO EFICIENTE DEL TIEMPO.</a> <br>
+						- <a>Deitel, H. M., & Deitel, P. J. (2004). Cómo programar en Java. Pearson Educación.</a> <br>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex',
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
